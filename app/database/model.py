@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from app.database.base import BaseMethod
+from .base import BaseMethod
 from app import SQLAlchemyDB as db
 #from passlib.apps import custom_app_context as pwd_context
 
@@ -11,7 +11,7 @@ class User(db.Model, BaseMethod):
     password_hash = db.Column(db.String(128), nullable=False)
     name = db.Column(db.String(250), nullable=True)
     username = db.Column(db.String(32), index = True, nullable=False)
-    active = db.Column(db.Integer, nullable=True, default='0')
+    active = db.Column(db.Integer, nullable=True, default=0)
     avatar = db.Column(db.String(128), nullable=True)
     handle_id = db.Column(db.Integer, nullable=True)
     admin = db.Column(db.Boolean, nullable=True)

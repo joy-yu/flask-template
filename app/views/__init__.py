@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 from app import app
-from app.views import user, login, uploads
+from . import user, login, uploads #相对导入

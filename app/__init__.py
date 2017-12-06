@@ -11,24 +11,21 @@ __version__ = '0.0.1'
 
 root_url = os.path.abspath(__name__)
 UPLOAD_FOLDER = os.path.join(root_url,'uploads')
-secret_key = os.urandom(24)
+IMAGE_URL = 'http://0.0.0.0/uploads/'
 v = Validator()
 
 app = Flask(__name__, static_folder='static', template_folder="template")
-app.secret_key = secret_key
 app.config.from_object('config')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config["REDIS_URL"] = "redis://:root@localhost"
 app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE_URI']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.register_blueprint(sse, url_prefix='/stream')
 SQLAlchemyDB = SQLAlchemy(app)
 
 
+from app import views
 
-#socketio = SocketIO(app)
 # from flask import render_template, send_from_directory
-# import os
 
 # @app.route('/<path:filename>')
 # def file(filename):
