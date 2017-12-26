@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from flask import session
 from app import app, v
 from app.utils import ResponseUtil, RequestUtil
 from app.database.model import User

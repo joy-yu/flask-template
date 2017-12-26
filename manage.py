@@ -4,6 +4,7 @@ from flask_migrate import Migrate, MigrateCommand
 from app import app
 from app.basemodels import db
 from app.database.model import *
+
 from passlib.apps import custom_app_context as pwd_context
 
 migrate = Migrate(app, db)
