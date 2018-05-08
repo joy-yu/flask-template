@@ -2,7 +2,7 @@ import os
 
 # MYSQL
 mysql_username = 'root'
-mysql_assword = 'password'
+mysql_password = 'password'
 mysql_name = 'flask_sql'
 mysql_hostname = '127.0.0.1'
 
